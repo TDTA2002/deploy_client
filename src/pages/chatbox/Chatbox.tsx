@@ -8,7 +8,7 @@ import {
   MDBCardBody,
   MDBCardFooter,
   MDBIcon} from "mdb-react-ui-kit";
-import './chatBox.scss'
+import './chatbox.scss'
 import { Socket, io } from "socket.io-client";
 import moment from 'moment';
 import { useSelector } from "react-redux";
