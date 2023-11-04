@@ -1,0 +1,248 @@
+// body{
+//     background-color: white;
+// }
+main[role="main"] {
+    .container {
+        margin-top: 4rem;
+
+        form.needs-validation {
+            input[type="hidden"] {
+                display: none;
+            }
+
+            .py-5.text-center {
+                i.fa-credit-card {
+                    font-size: 4rem;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                }
+
+                p.lead {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .row {
+                .col-md-4.order-md-2.mb-4 {
+                    h4.d-flex.justify-content-between.align-items-center.mb-3 {
+                        span.text-muted {
+                            font-size: 1rem;
+                        }
+
+                        span.badge.badge-secondary.badge-pill {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    ul.list-group.mb-3 {
+                        input[type="hidden"] {
+                            display: none;
+                        }
+
+                        li.list-group-item.d-flex.justify-content-between.lh-condensed {
+                            div {
+                                h6.my-0 {
+                                    font-size: 1rem;
+                                }
+
+                                small.text-muted {
+                                    font-size: 0.875rem;
+                                }
+                            }
+
+                            span.text-muted {
+                                font-size: 1rem;
+                            }
+                        }
+
+                        li.list-group-item.d-flex.justify-content-between {
+                            span {
+                                font-size: 1rem;
+                            }
+
+                            strong {
+                                font-size: 1.25rem;
+                            }
+                        }
+                    }
+
+                    .input-group {
+                        input.form-control {
+                            font-size: 1rem;
+                        }
+
+                        .input-group-append {
+                            button.btn.btn-secondary {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+
+                .col-md-8.order-md-1 {
+                    h4.mb-3 {
+                        font-size: 1.5rem;
+                    }
+
+                    .row {
+                        .col-md-12 {
+
+                            label[for="kh_ten"],
+                            label[for="kh_gioitinh"],
+                            label[for="kh_diachi"],
+                            label[for="kh_dienthoai"],
+                            label[for="kh_email"],
+                            label[for="kh_ngaysinh"],
+                            label[for="kh_cmnd"] {
+                                font-size: 1rem;
+                            }
+
+                            input.form-control {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+
+                    h4.mb-3 {
+                        font-size: 1.5rem;
+                    }
+
+                    .d-block.my-3 {
+                        .custom-control.custom-radio {
+                            input[type="radio"].custom-control-input {
+                                font-size: 1rem;
+                            }
+
+                            label.custom-control-label {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+
+                    hr.mb-4 {
+                        margin-bottom: 1rem;
+                    }
+
+                    button.btn.btn-primary.btn-lg.btn-block[name="btnDatHang"] {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main {
+    width: 75%;
+    position: relative;
+    left: 120px;
+
+    .checkout-header {
+        margin-bottom: 20px;
+
+        a {
+            img {
+                width: 185px;
+                height: 40px;
+            }
+        }
+    }
+
+    .checkout-nav {
+        font-size: 0.8rem;
+        position: relative;
+
+        ol {
+            display: flex;
+
+            li {
+                display: flex;
+                align-items: center;
+
+                .material-symbols-outlined {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .contact-information {
+        margin-top: 20px;
+    }
+
+    form {
+        margin-top: 30px;
+
+        .form-group {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            select {
+                width: 30%;
+                border-radius: 4px;
+                border: 1px solid #d1d0cf;
+                margin-bottom: 10px;
+                padding: 0px 10px;
+            }
+
+            input {
+                margin-bottom: 10px;
+                padding: 8px;
+                outline: none;
+                border-radius: 4px;
+                border: 1px solid #d1d0cf;
+            }
+
+
+
+            .firstName,
+            .lastName {
+                width: 49%;
+            }
+
+            .address,
+            .apartment,
+            .email {
+                width: 100%;
+            }
+
+            .city,
+            .postalCode {
+                width: 30%;
+            }
+
+            .phone {
+                width: 100%;
+            }
+        }
+
+
+        .checkbox-container {
+            display: flex;
+
+            input {
+                margin-right: 10px;
+            }
+        }
+
+        .continue-button {
+            display: flex;
+            justify-content: flex-end;
+            background-color: rgb(216, 216, 216);
+            color: #3f3e3e;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .continue-button:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+}

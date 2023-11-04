@@ -1,0 +1,29 @@
+.toggle-language {
+    // font-family: $content_font;
+    width: 60px;
+
+    // .boss{
+    //     z-index: 99;
+    //     background-color: red;
+    // }
+    a {
+        // font-family: $content_font;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-toggle {
+        justify-content: space-between;
+    }
+
+    .toggle-language-menu {
+        margin-top: -15px;
+        left: -3px;
+    }
+
+    .flag-united-kingdom {
+        margin-right: 10px;
+    }
+
+}

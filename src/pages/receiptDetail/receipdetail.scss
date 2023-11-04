@@ -1,0 +1,278 @@
+.cell-1 {
+    border-collapse: separate;
+    border-spacing: 0 4em;
+    background: #fff;
+    border-bottom: 5px solid transparent;
+    /*background-color: gold;*/
+    background-clip: padding-box;
+}
+
+thead {
+    background: #dddcdc;
+}
+
+.toggle-btn {
+    width: 40px;
+    height: 21px;
+    background: grey;
+    border-radius: 50px;
+    padding: 3px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s 0.1s ease-in-out;
+    -moz-transition: all 0.3s 0.1s ease-in-out;
+    -o-transition: all 0.3s 0.1s ease-in-out;
+    transition: all 0.3s 0.1s ease-in-out;
+}
+
+.toggle-btn>.inner-circle {
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s 0.1s ease-in-out;
+    -moz-transition: all 0.3s 0.1s ease-in-out;
+    -o-transition: all 0.3s 0.1s ease-in-out;
+    transition: all 0.3s 0.1s ease-in-out;
+}
+
+.toggle-btn.active {
+    background: blue !important;
+}
+
+.toggle-btn.active>.inner-circle {
+    margin-left: 19px;
+}
+
+.getOTP-container {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    // font-family: $content_font;
+    border-radius: 6px;
+    margin-bottom: 20px;
+
+    input {
+        outline: none;
+        padding: 7px;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 50%;
+        margin: 10px 0px;
+    }
+
+    button {
+        background-color: black;
+        color: #fff;
+        padding: 7px 10px;
+        border-radius: 4px;
+        width: 100px;
+    }
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+:root {
+    //Fonts
+    --font-primary: "Fredoka", sans-serif;
+    --font-secondary: "Montserrat", sans-serif;
+    //Colors
+    --primary: #7c5ef4;
+    --primary-darker: #624ac1;
+    --primary-lighten: #9278fd;
+    --secondary: #f0f0f5;
+    --dark-secondary: #d1ad40;
+    --light-secondary: #45454;
+    --light: #454545;
+    //status color
+    --sent-rgb: 64, 198, 165;
+    --pending-rgb: 232, 148, 42;
+}
+
+
+/*Global Buttons*/
+.btn-primary,
+.btn-primary:focus {
+    background: var(--primary);
+    color: #fffeff;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border-radius: 1.4rem;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+
+    &:hover {
+        border: 0;
+        background: var(--primary-lighten);
+    }
+
+    &:active,
+    &:active:focus {
+        border: 0;
+        background: var(--primary-darker);
+        box-shadow: none;
+    }
+}
+
+.btn-arrow,
+.btn-arrow:focus {
+    color: var(--light-secondary);
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+
+    &:hover {
+        color: var(--light);
+    }
+}
+
+/*Sidebar*/
+aside {
+    background: var(--secondary);
+    min-height: 100vh;
+    border-radius: 0 1.5rem 1.5rem 0;
+
+    .logo {
+        color: #fffeff;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        font-family: var(--font-primary);
+        font-weight: 600;
+        border-radius: 0 1.5rem 1.5rem 0;
+        background: linear-gradient(var(--primary) 50%, var(--primary-lighten) 50%);
+    }
+
+    .switch-light,
+    .switch-light:focus {
+        color: #fffeff;
+        opacity: 0.7;
+        box-shadow: none;
+
+        &:hover {
+            color: #fffeff;
+            opacity: 1;
+        }
+    }
+}
+
+/*Invoice page*/
+.invoice-list-page {
+    padding: 3rem 0;
+    width: 100%;
+
+    &__header {
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-family: var(--font-primary);
+            margin-bottom: 10px;
+        }
+
+        .detail {
+            font-size: clamp(0.8rem, 4vw, 1rem);
+            font-family: var(--font-secondary);
+            opacity: 0.7;
+        }
+    }
+
+    &__content {
+        padding: 2rem 0;
+
+        .invoice-item {
+            background: var(--secondary);
+            color: #454545;
+            padding: 1.5rem 2rem;
+            margin: 1rem 0;
+            border-radius: 0.4rem;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            box-shadow: 0px 10px 20px -10px rgb(0 0 0 / 5%);
+
+            .id {
+                font-family: var(--font-primary);
+                color: var(--light-secondary);
+
+                span {
+                    font-weight: 600;
+                    color: var(--light);
+                }
+            }
+
+            .date,
+            .company {
+                font-family: var(--font-secondary);
+                opacity: 0.8;
+            }
+
+            .amount {
+                font-family: var(--font-primary);
+                color: var(--light);
+                font-weight: 600;
+                font-size: clamp(1rem, 2vw, 1.3rem);
+            }
+
+            .status {
+                display: inline-flex;
+                align-items: center;
+                padding: 0.6rem 1.2rem;
+                border-radius: 0.4rem;
+                color: var(--light);
+                font-family: var(--font-primary);
+                font-weight: 600;
+                background: var(--dark-secondary);
+                font-size: clamp(0.8rem, 2vw, 0.8rem);
+
+                &:before {
+                    content: "";
+                    border-radius: 100%;
+                    display: inline-flex;
+                    background: var(--light);
+                    width: 0.3rem;
+                    height: 0.3rem;
+                    margin-right: 0.5rem;
+                }
+
+                &--sent {
+                    background: rgb(var(--sent-rgb), 0.2);
+                    color: rgb(var(--sent-rgb), 1);
+
+                    &:before {
+                        background: rgb(var(--sent-rgb), 1);
+                    }
+                }
+
+                &--pending {
+                    background: rgb(var(--pending-rgb), 0.2);
+                    color: rgb(var(--pending-rgb), 1);
+
+                    &:before {
+                        background: rgb(var(--pending-rgb), 1);
+                    }
+                }
+            }
+        }
+    }
+}
