@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './productDetail.scss';
 import { useParams } from 'react-router-dom';
 import apis from '@/services/apis';
@@ -19,18 +19,14 @@ interface Product {
 }
 
 export default function ProductDetail() {
-    const [quantity, setQuantity] = useState(1);
     const userStore = useSelector((store: StoreType) => {
         return store.userStore
     })
     const { id } = useParams();
     const [product, setProduct] = useState<Product | null>(null);
     const [selectedOption, setSelectedOption] = useState(0); // Added state for selected option
-    const [isOpenModal, setIsOpenModal] = useState(false);
-    const [productData, setProductData] = useState<Product | null>(null);
-    const guestCartStore = useSelector((store: StoreType) => {
-        return store.guestCartStore
-    })
+    const [, setIsOpenModal] = useState(false);
+    const [, setProductData] = useState<Product | null>(null);
     const dispatch = useDispatch()
 
     useEffect(() => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import blob from '@/images/blob.svg'
 import about from '@/images/Controller-About-1.svg'
 import about2 from '@/images/Controller-About-2.svg'

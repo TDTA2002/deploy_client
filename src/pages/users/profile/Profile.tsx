@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './profile.scss';
 import { StoreType } from '@/stores';
 import {
@@ -7,57 +7,19 @@ import {
     MDBRow,
     MDBCard,
     MDBCardText,
-    MDBCardBody,
-    MDBCardImage,
-    MDBBtn,
-    MDBBreadcrumb,
-    MDBBreadcrumbItem,
-    MDBProgress,
-    MDBProgressBar,
-    MDBIcon,
-    MDBListGroup,
-    MDBListGroupItem
-} from 'mdb-react-ui-kit';
+    MDBCardBody} from 'mdb-react-ui-kit';
 import { message } from 'antd';
 import { useSelector } from 'react-redux';
-import { User } from "@slices/user.slice";
 // import ChangeAvatar from '../changeAvatar/ChangeAvatar';
 import apis from '@/services/apis';
 import ChangePassword from '../changepass/ChangePassword';
 
 export default function ProfilePage() {
-    const [loading, setLoading] = useState(false);
 
     const [isLoading, setIsLoading] = useState(false);
 
     const userStore = useSelector((store: StoreType) => store.userStore);
 
-    function handleChangePassword(e: React.FormEvent) {
-        e.preventDefault();
-        setLoading(true);
-        let data = {
-            oldPassword: (e.target as any).oldPassword.value,
-            newPassword: (e.target as any).newPassword.value
-        }
-        apis.userApi.changePassword(data)
-            .then(res => {
-                console.log("res", res)
-                if (res.status == 200) {
-                    setLoading(false);
-                    message.success("Please check email");
-                }
-                if (res.status == 213) {
-                    setLoading(false);
-                    message.warning(res.data.message);
-                }
-            })
-            .catch(err => {
-                setLoading(false);
-                for (let i in err.response.data.message) {
-                    message.warning(err.response.data.message[i])
-                }
-            })
-    }
 
     function handleResendEmail() {
         setIsLoading(true);

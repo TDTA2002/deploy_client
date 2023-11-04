@@ -1,5 +1,4 @@
 import "./loading.scss";
-import Icon from './images.png'
 export default function Loading() {
   return (
     <div className="loading_container">
