@@ -18,7 +18,7 @@ export default {
         return await axios.get(`${import.meta.env.VITE_SV_HOST}products`);
     },
     findMany: async function (take: number, skip: number) {
-        return await axios.get(`http://127.0.0.1:3000/api/v2/products?take=${take}&skip=${skip}`);
+        return await axios.get(`https://deployserver-production-76d9.up.railway.app/api/v2/products?take=${take}&skip=${skip}`);
     },
     findById: async function (productId: string) {
         return await axios.get(import.meta.env.VITE_SV_HOST + "products/" + productId)
