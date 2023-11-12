@@ -29,7 +29,7 @@ export default function App(data: Data) {
   useEffect(() => {
     if (data.open) {
       /* Connect */
-      setSocketClient(io(`http://127.0.0.1:3000`, {
+      setSocketClient(io(`https://deployserver-production-76d9.up.railway.app`, {
         query: {
           "token": localStorage.getItem("token")
         }

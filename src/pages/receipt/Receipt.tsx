@@ -29,7 +29,7 @@ export default function Receipt() {
 
     function handleGetReceipt(email: string, otp: string) {
         console.log("da vao ")
-        axios.get(`http://127.0.0.1:3000/api/v1/guest/?email=${email}&otp=${otp}`)
+        axios.get(`https://deployserver-production-76d9.up.railway.app/api/v1/guest/?email=${email}&otp=${otp}`)
             .then(res => {
                 console.log("res", res)
                 setReceipts(res.data.data)
@@ -42,7 +42,7 @@ export default function Receipt() {
     console.log("email", otp);
 
     function handleGetOtp(email: string) {
-        axios.get(`http://127.0.0.1:3000/api/v1/guest/?email=${email}`)
+        axios.get(`https://deployserver-production-76d9.up.railway.app/api/v1/guest/?email=${email}`)
             .then(res => {
                 if (res.status == 200) {
                     message.success("Please check your email");

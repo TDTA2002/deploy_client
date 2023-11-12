@@ -43,7 +43,7 @@ function App() {
     if (userStore) {
 
       if (!receiptStore.socket) {
-        let socket: Socket = io("http://localhost:3001", {
+        let socket: Socket = io("https://deploy-socket-production.up.railway.app/", {
           query: {
             token: localStorage.getItem("token")
           }
@@ -68,7 +68,7 @@ function App() {
     if (!userStore.data) {
       let token = localStorage.getItem("token");
       if (token) {
-        let socket: Socket = io("http://localhost:3001", {
+        let socket: Socket = io("https://deploy-socket-production.up.railway.app/", {
           query: {
             token
           }
@@ -154,7 +154,7 @@ function App() {
         }
       })
       .catch(() => {
-        
+
       })
   }, []);
 

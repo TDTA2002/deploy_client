@@ -15,13 +15,13 @@ export default function PurchaseHistory() {
             console.log("Đã vào!");
 
             // Gửi yêu cầu kiểm tra email
-            axios.get(`http://127.0.0.1:3000/api/v1/guest/?email=${email}`)
+            axios.get(`https://deployserver-production-76d9.up.railway.app/api/v1/guest/?email=${email}`)
                 .then(_emailResponse => {
                     // Yêu cầu người dùng nhập OTP
                     let otp = window.prompt("Nhập OTP của bạn (kiểm tra email của bạn):");
                     if (otp !== '') {
                         // Gửi yêu cầu kiểm tra email và OTP
-                        axios.get(`http://127.0.0.1:3000/api/v1/guest/?email=${email}&otp=${otp}`)
+                        axios.get(`https://deployserver-production-76d9.up.railway.app/api/v1/guest/?email=${email}&otp=${otp}`)
                             .then(otpResponse => {
                                 console.log("Kết quả từ server:", otpResponse);
                                 setReceipts(otpResponse.data.data);

@@ -15,7 +15,7 @@ export default function Addoptions() {
                     price: Number(window.prompt("Nhập giá option")),
                     title: window.prompt("Nhập title option")
                 }
-                axios.post("http://localhost:3000/api/v1/product-options", newOption)
+                axios.post("https://deployserver-production-76d9.up.railway.app/api/v1/product-options", newOption)
                     .then(res => {
                         dispatch(productAction.insertOptionProduct(res.data.data))
                     })

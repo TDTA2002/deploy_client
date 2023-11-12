@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import {  Popconfirm } from 'antd';
+import { Popconfirm } from 'antd';
 import { StoreType } from '@/stores';
 import { guestCartActions } from '@/stores/slices/guestCart.slice';
 
@@ -22,7 +22,7 @@ interface OffCanvasExampleProps {
 
 
 
-function OffCanvasExample({  placement }: OffCanvasExampleProps) {
+function OffCanvasExample({ placement }: OffCanvasExampleProps) {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -35,6 +35,8 @@ function OffCanvasExample({  placement }: OffCanvasExampleProps) {
     const userStore = useSelector((store: StoreType) => {
         return store.userStore
     })
+    console.log("userStore", userStore);
+
 
     const guestCartStore = useSelector((store: StoreType) => {
         return store.guestCartStore
@@ -42,7 +44,6 @@ function OffCanvasExample({  placement }: OffCanvasExampleProps) {
 
     const cart = userStore.cart?.detail;
     const guest = guestCartStore.cart
-    console.log("guest", guest);
 
 
     const subTotal = cart?.reduce((total: number, item: any) => {
@@ -55,7 +56,7 @@ function OffCanvasExample({  placement }: OffCanvasExampleProps) {
     const handleChangeQuantity = (optionId: number, quantity: number) => {
         const cart = userStore.cart?.detail;
         if (cart) {
-            if (userStore.socket) {
+            if (userStore.socket) {                
                 userStore.socket.emit("addToCart", {
                     receiptId: userStore.cart?.id,
                     optionId,
@@ -76,10 +77,8 @@ function OffCanvasExample({  placement }: OffCanvasExampleProps) {
 
 
     const handleDeleteProduct = (optionId: string) => {
-        console.log("đã vào ", optionId);
 
         let cart = JSON.parse(localStorage.getItem("cart") ?? "[]")
-        console.log("cart", cart);
 
         let findResult = cart.find((itemFind: any) => itemFind.optionId === optionId)
         if (findResult) {
@@ -88,7 +87,6 @@ function OffCanvasExample({  placement }: OffCanvasExampleProps) {
             dispatch(guestCartActions.setCart(cart))
         }
     }
-    console.log("hadleDeleteItemFromCart", userStore.socket);
 
     return (
         <>
